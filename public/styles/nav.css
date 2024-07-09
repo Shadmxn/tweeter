@@ -11,7 +11,7 @@ nav {
   box-sizing: border-box;
   position: fixed;
   font-family: 'Bungee', sans-serif;
-  position: fixed;
+  top: 0;
 }
 
 .write-new-tweet {

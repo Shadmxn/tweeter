@@ -1,0 +1,33 @@
+/* header.css */
+
+header {
+  background-color: #de9138;
+  background-image: url("/images/brushed-alum.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.your-name {
+  text-align: center;
+  color: #fefefe;
+}
