@@ -1,3 +1,4 @@
+/* New tweet section styling */
 .new-tweet {
   background-color: #ffffff;
   padding: 20px;
@@ -12,17 +13,18 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.new-tweet form {
+.tweet-form {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 }
 
-.new-tweet label {
+.tweet-form label {
   font-size: 1em;
   margin-bottom: 10px;
 }
 
-.new-tweet textarea {
+.tweet-text {
   width: 100%;
   height: 100px;
   padding: 10px;
@@ -33,13 +35,13 @@
   margin-bottom: 10px;
 }
 
-.new-tweet div {
+.tweet-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.new-tweet button {
+.tweet-button {
   background-color: #4056A1;
   color: #ffffff;
   border: none;
@@ -47,8 +49,15 @@
   font-size: 1em;
   border-radius: 4px;
   font-family: 'Bungee', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.new-tweet .counter {
+.tweet-button:hover {
+  background-color: #324a85;
+  transform: scale(1.10);
+}
+
+.counter {
   font-size: 1em;
 }
