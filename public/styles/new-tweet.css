@@ -1,4 +1,3 @@
-/* New tweet section styling */
 .new-tweet {
   background-color: #ffffff;
   padding: 20px;
@@ -13,13 +12,13 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.tweet-form {
+.new-tweet {
   display: flex;
   flex-direction: column;
   padding-top: 20px;
 }
 
-.tweet-form label {
+.new-tweet label {
   font-size: 1em;
   margin-bottom: 10px;
 }
@@ -55,9 +54,16 @@
 
 .tweet-button:hover {
   background-color: #324a85;
-  transform: scale(1.10);
+  transform: scale(1.05);
+}
+
+.tweet-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(64, 86, 161, 0.5);
 }
 
 .counter {
   font-size: 1em;
+  color: #4056A1;
+  font-weight: bold;
 }
