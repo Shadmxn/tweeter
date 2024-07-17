@@ -2,30 +2,45 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-          type="text/css" />
-          
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </head>
 
   <body>
@@ -34,13 +49,13 @@
       <span>tweeter</span>
       <div class="write-new-tweet">
         <p>Write a new tweet</p>
-        <i class="fa-solid fa-angles-down" style="color: #ff0000;"></i>
+        <i class="fa-solid fa-angles-down" style="color: #ff0000"></i>
       </div>
     </nav>
 
-    <header>
+    <header class="main-header">
       <div class="avatar">
-        <img src="/images/profile-hex.png">
+        <img src="/images/profile-hex.png" alt="Your Profile Picture" />
       </div>
       <div class="your-name">
         <h2>Your Name</h2>
@@ -48,7 +63,7 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main id="main-container">
       <section class="new-tweet">
         <h2>Create a Tweet</h2>
         <form class="new-tweet" action="/tweets/" method="POST">
@@ -60,12 +75,35 @@
           </div>
         </form>
       </section>
-      <div>
-        <h1>Welcome to Tweeter</h1>
-        <p>This is a modification to see live updates.</p>
-      </div>
-      <h2>test tweet</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <!-- Tweet container -->
+      <section id="tweets-container">
+        <!-- Single Tweet -->
+        <article class="tweet">
+          <header>
+            <div class="profile-pic">
+              <img src="/images/avatar.png" alt="User's profile picture" />
+            </div>
+            <div class="user-info">
+              <h2>Shadman</h2>
+              <p class="handle">@shadman1234</p>
+            </div>
+          </header>
+          <div class="tweet-content">
+            <p>Learn how to become a web developer at Lighthouse Labs!</p>
+          </div>
+          <footer>
+            <div class="date-posted">
+              <p>2h ago</p>
+            </div>
+            <div class="tweet-actions">
+              <i class="fas fa-reply"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
     </main>
   </body>
 </html>
