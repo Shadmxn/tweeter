@@ -66,14 +66,18 @@ $(document).ready(function() {
     event.preventDefault(); // Prevent default form submission
 
     const tweetContent = $('#tweet-text').val().trim();
+    const errorMessageElement = $('.error-message');
+
+    // Hide the error message before validation
+    errorMessageElement.slideUp();
 
     // Validation
     if (!tweetContent) {
-      alert('Tweet content cannot be empty.');
+      errorMessageElement.text('Tweet content cannot be empty.').slideDown();
       return;
     }
     if (tweetContent.length > MAX_TWEET_LENGTH) {
-      alert('Tweet content cannot exceed 140 characters.');
+      errorMessageElement.text('Tweet content cannot exceed 140 characters.').slideDown();
       return;
     }
 
@@ -92,7 +96,7 @@ $(document).ready(function() {
       },
       error: function(err) {
         console.error('Error in form submission:', err);
-        alert('Failed to post tweet. Please try again later.');
+        errorMessageElement.text('Failed to post tweet. Please try again later.').slideDown();
       }
     });
   });
