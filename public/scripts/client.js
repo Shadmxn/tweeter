@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // Constant for maximum tweet length
+  const MAX_TWEET_LENGTH = 140;
+
   // Function to create the HTML structure for a tweet
   const createTweetElement = (tweet) => {
     return `
@@ -35,7 +38,7 @@ $(document).ready(function() {
     tweetContainer.empty(); // Clear any existing content
     tweets.forEach(tweet => {
       const tweetElement = createTweetElement(tweet);
-      tweetContainer.prepend(tweetElement); // Append each tweet element
+      tweetContainer.prepend(tweetElement); // prepend each tweet element
     });
   };
 
@@ -50,6 +53,7 @@ $(document).ready(function() {
       },
       error: (error) => {
         console.error('Error fetching tweets:', error);
+        alert('Failed to load tweets. Please try again later.');
       }
     });
   };
@@ -62,14 +66,13 @@ $(document).ready(function() {
     event.preventDefault(); // Prevent default form submission
 
     const tweetContent = $('#tweet-text').val().trim();
-    const maxTweetLength = 140;
 
     // Validation
     if (!tweetContent) {
       alert('Tweet content cannot be empty.');
       return;
     }
-    if (tweetContent.length > maxTweetLength) {
+    if (tweetContent.length > MAX_TWEET_LENGTH) {
       alert('Tweet content cannot exceed 140 characters.');
       return;
     }
@@ -80,14 +83,15 @@ $(document).ready(function() {
     // Make the AJAX POST request
     $.ajax({
       type: 'POST',
-      url: '/tweets', // Make sure this is the correct endpoint
+      url: '/tweets',
       data: formData,
       success: function(response) {
-        loadTweets(); // Reload tweets to include the new one
-        $('#tweet-text').val(''); // Clear the form input
+        loadTweets();
+        $('#tweet-text').val('');
       },
       error: function(err) {
-        console.log('Error in form submission:', err);
+        console.error('Error in form submission:', err);
+        alert('Failed to post tweet. Please try again later.');
       }
     });
   });
