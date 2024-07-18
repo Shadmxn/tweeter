@@ -86,8 +86,9 @@ $(document).ready(function() {
       url: '/tweets',
       data: formData,
       success: function(response) {
-        loadTweets();
-        $('form')[0].reset();
+        loadTweets(); // Reload tweets to include the new one
+        $('form')[0].reset(); // Reset the form to its initial state
+        $('.counter').text(MAX_TWEET_LENGTH); // Reset the character counter
       },
       error: function(err) {
         console.error('Error in form submission:', err);
