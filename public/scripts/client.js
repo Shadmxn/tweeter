@@ -56,4 +56,39 @@ $(document).ready(function() {
 
   // Call loadTweets when the page is ready
   loadTweets();
+
+  // Form submission event handler
+  $('form').on('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const tweetContent = $('#tweet-text').val().trim();
+    const maxTweetLength = 140;
+
+    // Validation
+    if (!tweetContent) {
+      alert('Tweet content cannot be empty.');
+      return;
+    }
+    if (tweetContent.length > maxTweetLength) {
+      alert('Tweet content cannot exceed 140 characters.');
+      return;
+    }
+
+    // Serialize the form data
+    const formData = $(this).serialize();
+
+    // Make the AJAX POST request
+    $.ajax({
+      type: 'POST',
+      url: '/tweets', // Make sure this is the correct endpoint
+      data: formData,
+      success: function(response) {
+        loadTweets(); // Reload tweets to include the new one
+        $('#tweet-text').val(''); // Clear the form input
+      },
+      error: function(err) {
+        console.log('Error in form submission:', err);
+      }
+    });
+  });
 });
