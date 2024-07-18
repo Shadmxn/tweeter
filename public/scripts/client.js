@@ -38,7 +38,7 @@ $(document).ready(function() {
     tweetContainer.empty(); // Clear any existing content
     tweets.forEach(tweet => {
       const tweetElement = createTweetElement(tweet);
-      tweetContainer.prepend(tweetElement); // prepend each tweet element
+      tweetContainer.prepend(tweetElement); // Append each tweet element
     });
   };
 
@@ -83,11 +83,11 @@ $(document).ready(function() {
     // Make the AJAX POST request
     $.ajax({
       type: 'POST',
-      url: '/tweets',
+      url: '/tweets', // Make sure this is the correct endpoint
       data: formData,
       success: function(response) {
-        loadTweets();
-        $('#tweet-text').val('');
+        loadTweets(); // Reload tweets to include the new one
+        $('form')[0].reset(); // Reset the form to its initial state
       },
       error: function(err) {
         console.error('Error in form submission:', err);
