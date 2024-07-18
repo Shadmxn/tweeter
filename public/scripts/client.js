@@ -17,7 +17,7 @@ $(document).ready(function() {
         </div>
         <footer>
           <div class="date-posted">
-            <p>${new Date(tweet.created_at).toLocaleString()}</p>
+            <p>${timeago.format(tweet.created_at)}</p>
           </div>
           <div class="tweet-actions">
             <i class="fas fa-reply"></i>
@@ -35,7 +35,7 @@ $(document).ready(function() {
     tweetContainer.empty(); // Clear any existing content
     tweets.forEach(tweet => {
       const tweetElement = createTweetElement(tweet);
-      tweetContainer.append(tweetElement); // Append each tweet element
+      tweetContainer.prepend(tweetElement); // Append each tweet element
     });
   };
 
