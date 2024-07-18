@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Meta Information -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tweeter - Home Page</title>
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" /> <!-- Font Awesome -->
-
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
-
-  <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- App JS -->
-  <script src="/scripts/client.js" defer></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
-</head>
-
+  <head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tweeter - Home Page</title>
+  
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" /> <!-- Font Awesome -->
+  
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+  
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+    <!-- App JS -->
+    <script src="/scripts/client.js" defer></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
+  </head>
+  <body>
+    
+    <!-- Existing content -->
+  </body>
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
@@ -51,7 +54,7 @@
     <main id="main-container">
       <section class="new-tweet">
         <h2>Create a Tweet</h2>
-        <form class="new-tweet" action="/tweets/" method="POST">
+        <form class="new-tweet" action="/tweets" method="POST">
           <label for="tweet-text">What's on your mind today?</label>
           <textarea class="tweet-text" name="text" id="tweet-text"></textarea>
           <div class="tweet-actions">

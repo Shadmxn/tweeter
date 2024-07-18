@@ -58,8 +58,47 @@ const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
     console.log("Tweet object:", tweet);
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   });
 };
 
 renderTweets(data);
+
+$(document).ready(function() {
+  // Handling the form inside 'new-tweet' section
+  $('form.new-tweet').on('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
+    
+    console.log('Form submission prevented!');
+    
+    // Serialize the form data
+    const formData = $(this).serialize();
+    console.log('Serialized form data:', formData);
+
+    // Make the AJAX POST request
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: formData,
+      success: function(response) {
+        console.log('Form data successfully submitted:', response);
+        
+        // Log the full response to understand its structure
+        console.log('Full response:', response); 
+
+        // Adjust based on actual response structure
+        // Assuming the response contains a property 'text'
+        const newTweet = $('<div>').addClass('tweet').text(response.text);
+        $('#tweets-container').prepend(newTweet);
+
+        // Reset the form after successful submission
+        $('form.new-tweet')[0].reset();
+      },
+      error: function(err) {
+        console.log('Error in form submission:', err);
+        console.log('Response Text:', err.responseText);
+        console.log('Status:', err.status);
+      }
+    });
+  });
+});
