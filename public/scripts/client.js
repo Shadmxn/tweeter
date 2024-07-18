@@ -83,11 +83,11 @@ $(document).ready(function() {
     // Make the AJAX POST request
     $.ajax({
       type: 'POST',
-      url: '/tweets', // Make sure this is the correct endpoint
+      url: '/tweets',
       data: formData,
       success: function(response) {
-        loadTweets(); // Reload tweets to include the new one
-        $('form')[0].reset(); // Reset the form to its initial state
+        loadTweets();
+        $('form')[0].reset();
       },
       error: function(err) {
         console.error('Error in form submission:', err);
