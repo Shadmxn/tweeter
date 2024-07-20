@@ -21,6 +21,10 @@ Tweets
 
 <img width="1222" alt="Screenshot 2024-07-20 at 7 54 10 PM" src="https://github.com/user-attachments/assets/e705f894-6115-4223-a566-07888df42e5f">
 
+Error message when submitting invalid tweet
+
+<img width="898" alt="Screenshot 2024-07-20 at 7 54 58 PM" src="https://github.com/user-attachments/assets/38f7e5c3-6112-4c73-93fe-0cba16514d6c">
+
 
 ## Dependencies
 
