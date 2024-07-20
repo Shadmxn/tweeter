@@ -29,10 +29,6 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
   </head>
   <body>
-    
-    <!-- Existing content -->
-  </body>
-  <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
@@ -56,7 +52,7 @@
       <section class="new-tweet">
         <h2>Create a Tweet</h2>
         <form class="new-tweet" action="/tweets" method="POST">
-          <div class="error-message" style="display: none;"></div>
+          <div class="error-message"></div>
           <label for="tweet-text">What's on your mind today?</label>
           <textarea class="tweet-text" name="text" id="tweet-text"></textarea>
           <div class="tweet-actions">
